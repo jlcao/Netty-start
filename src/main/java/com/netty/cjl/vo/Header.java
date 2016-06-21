@@ -7,7 +7,7 @@ import java.util.Map;
  * Created by jlcao on 2016/6/20.
  */
 public class Header {
-    private int crcCode = 0xabef0101;
+    private int crcCode = 12;
     private int length;
     private long sessionID;
     private byte type;

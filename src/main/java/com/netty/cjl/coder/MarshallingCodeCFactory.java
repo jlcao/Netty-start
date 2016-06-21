@@ -9,20 +9,20 @@ import org.jboss.marshalling.MarshallingConfiguration;
  * Created by jlcao on 2016/6/20.
  */
 public class MarshallingCodeCFactory {
-    public static MarshallingDecoder buildMarshallingDecoder(){
+    public static MyMarshallingDecoder buildMarshallingDecoder(){
         MarshallerFactory marshallerFactory = Marshalling.getProvidedMarshallerFactory("serial");
         MarshallingConfiguration configuration = new MarshallingConfiguration();
         configuration.setVersion(5);
         UnmarshallerProvider provider = new DefaultUnmarshallerProvider(marshallerFactory, configuration);
-        MarshallingDecoder decoder = new MarshallingDecoder(provider);
+        MyMarshallingDecoder decoder = new MyMarshallingDecoder(provider);
         return decoder;
     }
-    public static MarshallingEncoder buildMarshallingEncoder(){
+    public static MyMarshallingEncoder buildMarshallingEncoder(){
         MarshallerFactory marshallerFactory = Marshalling.getProvidedMarshallerFactory("serial");
         MarshallingConfiguration configuration = new MarshallingConfiguration();
         configuration.setVersion(5);
         MarshallerProvider provider = new DefaultMarshallerProvider(marshallerFactory, configuration);
-        MarshallingEncoder encoder = new MarshallingEncoder(provider);
+        MyMarshallingEncoder encoder = new MyMarshallingEncoder(provider);
         return encoder;
     }
 }
